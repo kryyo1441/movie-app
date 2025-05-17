@@ -1,12 +1,62 @@
-# React + Vite
+# Movie App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based movie application that allows users to browse popular movies and manage their favorites.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Browse popular movies from TMDB API
+- Search for specific movies
+- Add/remove movies to favorites
+- Responsive grid layout
+- Real-time favorites management using Context API
+- Optimized rendering with React.memo
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React + Vite
+- React Router for navigation
+- TMDB API for movie data
+- Context API for state management
+
+## Setup
+
+1. Clone the repository
+2. Install dependencies:
+```bash
+npm install
+```
+3. Create a `.env` file with your TMDB API key:
+```bash
+VITE_TMDB_API_KEY=your_api_key_here
+```
+4. Start the development server:
+```bash
+npm run dev
+```
+
+## Project Structure
+
+```
+src/
+├── components/
+│   ├── MovieCard.jsx
+│   └── NavBar.jsx
+├── contexts/
+│   └── MovieContext.jsx
+├── css/
+│   ├── MovieCard.css
+│   └── Favorites.css
+├── pages/
+│   ├── Home.jsx
+│   └── Favorites.jsx
+├── services/
+│   └── api.js
+└── App.jsx
+```
+
+## API Integration
+
+The app uses the TMDB API to fetch:
+- Popular movies
+- Movie search results
+- Movie posters and details

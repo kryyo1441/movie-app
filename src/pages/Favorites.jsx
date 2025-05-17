@@ -9,8 +9,7 @@ function Favourites() {
         return (
             <>
                 <div className="favorites">
-                    <h2>Favourites</h2>
-                    <p>Your favorite movies</p>
+                    <h2>Your Favorites</h2>
                 </div>
                 <div className="favorites-grid">
                     {favorites.map(movie => (
