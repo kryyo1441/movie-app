@@ -1,6 +1,6 @@
 import { useState } from "react";
-import "../css/Home.css"
-import MovieCard from "../components/MovieCard"
+import "../css/Home.css";
+import MovieCard from "../components/MovieCard";
 function Home() {
 
     const [searchQuery, setSearchQuery] = useState("");
@@ -34,4 +34,4 @@ function Home() {
     )
 }
 
-export default Home
+export default Home;

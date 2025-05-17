@@ -2,6 +2,8 @@
   padding: 2rem 0;
   width: 100%;
   box-sizing: border-box;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .search-form {
@@ -60,4 +62,11 @@
   padding: 1rem;
   width: 100%;
   box-sizing: border-box;
+}
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
 }
