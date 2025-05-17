@@ -2,6 +2,7 @@
   padding: 2rem;
   width: 100%;
   box-sizing: border-box;
+  
 }
 
 .favorites h2 {
@@ -44,6 +45,15 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.favorites-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .movies-grid > * {
