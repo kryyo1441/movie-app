@@ -28,9 +28,23 @@ function Home() {
 
     // Remove this hardcoded movies array, as movies are fetched from API
 
-    const onSearch = (e) => {
+    const onSearch = async (e) => {
         e.preventDefault()
-        alert(searchQuery);
+        if(!searchQuery.trim()) return
+        if(loading) return 
+        
+        
+        setLoading(true);
+        try {
+            const searchResults = await SearchMovies(searchQuery)
+            setMovies(searchResults);
+            setError(null);
+        } catch (err) {
+            console.log(err);
+            setError("failed to search movies....")
+        } finally {
+            setLoading(false);
+        }
     }
 
     return (
@@ -41,11 +55,19 @@ function Home() {
                 <button type="submit" className="search-button">Search</button>
 
             </form>
-            <div className="movie-grid">
+
+            {loading ? (
+                <div className="loading">Loading......</div>
+            ):(
+                 <div className="movie-grid">
                 {movies.map(movie =>
                    movie.title.toLowerCase().startsWith(searchQuery) && ( <MovieCard movie={movie} key={movie.id} />)
                 )}
             </div>
+            )}
+
+
+           
         </div>
     )
 }
